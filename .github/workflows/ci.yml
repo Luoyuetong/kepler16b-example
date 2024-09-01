@@ -26,8 +26,12 @@ jobs:
         cache-disabled: 'false'
     - name: Build
       run: ./gradlew build
+    - name: startFuseki 
+      run: ./gradlew startFuseki  
     - name: Query
-      run: ./gradlew owlQuery  
+      run: ./gradlew owlQuery
+    - name: stopFuseki 
+      run: ./gradlew stopFuseki 
     - name: Upload
       if: ${{ always() }}
       uses: actions/upload-artifact@v3
