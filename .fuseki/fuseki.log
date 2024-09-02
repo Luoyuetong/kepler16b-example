@@ -1,0 +1,9 @@
+[2024-09-01 16:57:15] Server     INFO  Apache Jena Fuseki 4.6.1
+[2024-09-01 16:57:15] Server     INFO  Configuration file: ../.fuseki.ttl
+[2024-09-01 16:57:15] Server     INFO  Path = /tutorial2
+[2024-09-01 16:57:15] Server     INFO  System
+[2024-09-01 16:57:15] Server     INFO    Memory: 4.0 GiB
+[2024-09-01 16:57:15] Server     INFO    Java:   17.0.12
+[2024-09-01 16:57:15] Server     INFO    OS:     Windows 10 10.0 amd64
+[2024-09-01 16:57:15] Server     INFO    PID:    7844
+[2024-09-01 16:57:15] Server     INFO  Start Fuseki (http=3030)
