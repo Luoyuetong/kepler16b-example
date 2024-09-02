@@ -61,7 +61,13 @@ jobs:
     - name: Publish
       uses: actions/upload-pages-artifact@v3
       with:
-        path: build/web            
+        path: build/web
+    - name: Upload
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: build
+        path: build/    
 
   # Deployment job
   deploy:
@@ -74,10 +80,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      - name: Upload
-         if: ${{ always() }}
-         uses: actions/upload-artifact@v3
-         with:
-           name: build
-           path: build/
 
