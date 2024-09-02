@@ -101,15 +101,15 @@ task owlReason(type:io.opencaesar.owl.reason.OwlReasonTask, group:"oml", depends
  */
 task generateDocs(type: io.opencaesar.owl.doc.OwlDocTask, dependsOn: owlReason) {
     // OWL catalog
-    inputCatalogPath = file('build/owl/catalog.xml')
-    // OWL catalog title
+    inputCatalogPath = file('src/catalog.xml')
+    // OWL catalog title //build/owl
     inputCatalogTitle = 'Kepler16b'
     // OWL catalog version
     inputCatalogVersion = project.version
     // OWL Ontology Iris
     inputOntologyIris = [ "$rootIri/classes", "$rootIri/properties",  "$rootIri/individuals" ]
     // Output folder
-    outputFolderPath = file('src/doc')
+    outputFolderPath = file('build/owl/doc')
     // Output case sensitivie path
     outputCaseSensitive = org.gradle.internal.os.OperatingSystem.current().isLinux()
 }
