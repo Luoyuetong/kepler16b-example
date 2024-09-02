@@ -1,6 +1,5 @@
 name: CI/CD
 
-
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -22,9 +21,14 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Build job
   build:
     runs-on: windows-latest
-
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
   # Deployment job
   deploy:
@@ -37,10 +41,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      
-    - name: Upload
-      if: ${{ always() }}
-      uses: actions/upload-artifact@v3
-      with:
-        name: build
-        path: build/
