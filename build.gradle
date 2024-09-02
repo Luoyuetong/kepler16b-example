@@ -101,7 +101,7 @@ task owlReason(type:io.opencaesar.owl.reason.OwlReasonTask, group:"oml", depends
  */
 task generateDocs(type: io.opencaesar.owl.doc.OwlDocTask, dependsOn: owlReason) {
     // OWL catalog
-    inputCatalogPath = file('src/catalog.xml')
+    inputCatalogPath = file('build/owl/catalog.xml')
     // OWL catalog title //build/owl
     inputCatalogTitle = 'Kepler16b'
     // OWL catalog version
