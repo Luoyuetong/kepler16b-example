@@ -48,7 +48,17 @@ jobs:
       uses: actions/upload-pages-artifact@v1
       with:
         path: build/web    
-
+# Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: windows-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
       
     - name: Upload
       if: ${{ always() }}
