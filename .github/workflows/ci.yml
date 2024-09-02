@@ -32,6 +32,8 @@ jobs:
       run: ./gradlew owlQuery
     - name: stopFuseki 
       run: ./gradlew stopFuseki 
+    - name: Generate Docs
+      run: ./gradlew generateDocs
     - name: Upload
       if: ${{ always() }}
       uses: actions/upload-artifact@v3
