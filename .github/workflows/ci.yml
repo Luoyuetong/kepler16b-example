@@ -34,21 +34,7 @@ jobs:
       run: ./gradlew stopFuseki 
     - name: Generate Docs
       run: ./gradlew generateDocs
-    - name: Set up Python 3
-      uses: actions/setup-python@v4
-      with: 
-         python-version: '3.10'
-    - name: Install Requirements
-      run: pip install -r src/ipynb/requirements.txt
-    - name: Run Notebook
-      run: python -m nbconvert --execute --to notebook --no-input src/ipynb/index.ipynb --output-dir='build/web' 
-    - name: Convert Notebook to HTML
-      run: python -m nbconvert --to html --no-input build/web/index.ipynb
-    - name: Publish
-      uses: actions/upload-pages-artifact@v1
-      with:
-        path: build/web    
-# Deployment job
+  # Deployment job
   deploy:
     environment:
       name: github-pages
