@@ -75,9 +75,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-   - name: Upload
-      if: ${{ always() }}
-      uses: actions/upload-artifact@v3
-      with:
-        name: build
-        path: build/
+
